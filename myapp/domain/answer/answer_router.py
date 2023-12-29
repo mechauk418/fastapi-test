@@ -23,6 +23,4 @@ def answer_create(question_id: int,
     question = question_crud.get_question(db, question_id=question_id)
     if not question:
         raise HTTPException(status_code=404, detail="Question not found")
-    answer_crud.create_answer(db, question=question,
-                              answer_create=_answer_create,
-                              user=current_user)
+    answer_crud.create_answer(db, question=question,answer_create=_answer_create, user=current_user)
