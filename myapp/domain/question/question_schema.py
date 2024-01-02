@@ -12,6 +12,8 @@ class Question(BaseModel):
     create_date: datetime.datetime
     answers: list[Answer] = []
     user: Union[User,None]=None
+    modify_date: Union[datetime.datetime,None] = None
+
 
 class QuestionList(BaseModel):
     total: int = 0
