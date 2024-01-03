@@ -21,6 +21,11 @@ router = APIRouter(
     prefix="/api/user",
 )
 
+from domain.user.user_schema import testdepends
+
+@router.get("/test", status_code=status.HTTP_200_OK)
+def test(number:int = Depends(testdepends)):
+    return number
 
 @router.post("/create", status_code=status.HTTP_204_NO_CONTENT)
 def user_create(_user_create: user_schema.UserCreate, db: Session = Depends(get_db)):

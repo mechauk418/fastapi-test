@@ -23,6 +23,7 @@ Base.metadata = MetaData(naming_convention=naming_convention)
 def get_db():
     db = SessionLocal()
     try:
+        print(db)
         yield db
     finally:
         db.close()

@@ -29,3 +29,6 @@ class User(BaseModel):
     id:int
     username:str
     email:str
+
+def testdepends(num:int=100):
+    return num+2
